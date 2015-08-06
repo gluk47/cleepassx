@@ -1,0 +1,29 @@
+keepassx 0.4.3 src with CLI added.
+CLI uses GNU readline and allows to navigate over database imitating regular filesystem, though not literally.
+
+You can launch resulting binary as usually, getting ordinary keepassx.
+You may launch it with «-cli» option, then it will not use X-server.
+
+As for now files Cli.h and Cli.cpp should cause compilation errors in Visual Studio, they've been compiled only with gcc in linux.
+
+## Build&run instructions: ##
+go to the root of the source tree, then<pre>
+$ mkdir build && cd build</pre>
+and<pre>
+$ cmake .. && make && ./src/keepassx -cli ~/passwords.kdb</pre>
+or<pre>
+$ qmake .. && make && ./build/keepassx -cli ~/passwords.kdb</pre>
+_(replace ~/passwords.kdb with anything you need)_
+
+The cli uses GNU readline, so its devel package has to be installed. I use **libreadline6-dev** from ubuntu 12.04. And certainly you need **cmake** or **qmake**, **make** and **gcc** :) This project uses no more gcc-specific than keepassx as well as it does not use C++11 or any other newest features, so at least any gcc4 up to 4.6 is suitable.
+
+## Usage ##
+You can press Tab twice or enter «?» to get help from the interface.
+
+---
+
+Have fun :)
+
+If you wish, you can **donate bitcoins** here: 1LCNLP1yUdHRBhdJ3AjENoVEeVWyska5J4.
+
+Thank you. Note: if you want to donate to keepassx, donate [there](http://www.keepassx.org/). Since they do not accept bitcoin donations at the moment, I will not share them.
